@@ -1,0 +1,41 @@
+NetWars BETA FAQ
+
+I've been getting many questions regarding the new game, I'll try to explain as much as possible here.
+
+A) What is the game? This game a Capture-the-Flag and King-of-the-Hill game. It's all played remotely via an SSH connection. This version is a beta test and will begin at 5 PM Pacific on July 8, 2011, and scoring will end at 11:59 PM on Sunday.  We hope to launch another game at the end of July or in August.
+
+B) How does the game work?  Players find a flag and replace it with your flag.  Currently, we're still using the following string as a default flag:
+
+user::netwars
+
+If a player named warpig replaces the flag with his own like
+
+user::warpig
+
+Then the player waits and defends this flag until the scorebot checks the location, and if the flag says anything but user::netwars, the owner of the flag gets a point at that time.  The scorebot averages visiting a flag every 10 minutes.  The scorebot may check remotely, or the scorebot might come from outside the game to see if the flag has changed.  A flag may be in a file, the filename itself, in hidden HTML on a website, etc.
+
+Players all start with a basic shell with limited attack tools.  Once 100 points are scored, the player unlocks tunnel features.  These first 100 points can be earned by hacking with basic command tools and defending the base shell account from other players.
+
+C) So if I'm late to the game, I won't score any points?  No, the game design has a reverting system for each target:
+
+1) If nobody scores on the target, it switches to a similar target, but also vulnerable, instance.  For example, there may be a Windows XP machine running a vulnerable warftp server.  If nobody scores in 90 minutes, the machine reverts randomly to another version of itself. This may be warftp again, it may be caesarftp or another vulnerable file transfer service.
+
+2) If a target has been held by one player for 30 minutes, it will also revert randomly to another target.
+
+*The times in 1 and 2 are experimental and will be adjusted to aid in gameplay, see the #netwars channel for notifications.
+
+D) Cheating?  It's pretty hard to find a way to cheat in the game.  The game boundaries are 192.168.10.0-192.168.100.255.  Any IP address in there is fair game.  ARP spoofing is fair game, firewalling off the rest of the network is fair game (just don't expect to get much in the way of points).  Find a router console connection--fair game ...
+
+E) Scoring? The scoreboard will be posted in the email announcing the game launch and available via the #netwars chatroom on irc.freenode.net.  The #netwars chatroom is also the general hangout for players and for troubleshooting the game with the operators.
+
+F) Defensive scoring is impossible then?  Each player starts the game with access to some flags, if they succeed in defending those flags, they will earn points. So far, however, it is more lucrative to attack than to defend a free account (this is to encourage activity in the game).
+ 
+G) What's the deal with teams?  The game is designed to be played and scored individually, many players choose to work in teams. While only an individual can score on a flag, there's nothing preventing players from working together. We will eventually have a team scoreboard, but there is nothing special about teams in the game (yet).
+
+H) Why? Play for fun, play to learn, play to get a job--take your pick.  Originally, netwars was designed to locate talent and challenge people to learn both offensive and defensive techniques in as real of an environment as possible.  Several organizations took advantage of the opportunity to hire talent they saw perform well in the game. Specifically, this mini-game is invite-only and designed to test out the new infrastructure.  The engine is designed to build your own lab environment for testing attacks and defenses, and the game will be the showcase the infrastructure.  In the future, the public game will be sponsored by industry organizations (sponsors will provide prizes to talent). 
+
+I) What's the risk to me?  The game is played via SSH, so unless you go out of your way to reverse tunnel from in the game back to yourself, you're just as secure as you started the game.
+
+J) What do you get out of this?  The infrastructure is designed to collect snapshots in the background every 10 minutes, as well as every packet transferred.  In the future, sponsors will get limited access to this data for research purposes, which is kept separate from the registration information for each player (which is not automatically given to the sponsors).
+
+K) How do I register?  It's currently free (and there will continue to be free games), just log-in to http://netwars.info and create an account--when the game starts, that's where you will find your SSH to begin playing.
